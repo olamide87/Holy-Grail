@@ -1,0 +1,74 @@
+[
+  {
+    "model": "holyGrail_api.product",
+    "pk": 1,
+    "fields": {
+      "closet_id": 1,
+      "name": "Jordan 5 Retro SE Oregon",
+      "color": "Green",
+      "image": "",
+      "price": 264.00,
+      "own": true
+    }
+  },
+  {
+    "model": "holyGrail_api.product",
+    "pk": 2,
+    "fields": {
+      "closet_id": 1,
+      "name": "adidas Yeezy Boost 350 V2 Semi Frozen Yellow",
+      "color": "Neon Green",
+      "image": "",
+      "price": 552.00,
+      "own": true
+    }
+  },
+  {
+    "model": "holyGrail_api.product",
+    "pk": 3,
+    "fields": {
+      "closet_id": 1,
+      "name": "ASICS Gel Kayano Trainer Birch",
+      "color": "Birch",
+      "image": "",
+      "price": 44.00,
+      "own": true
+    }
+  },
+  {
+    "model": "holyGrail_api.product",
+    "pk": 4,
+    "fields": {
+      "closet_id": 1,
+      "name": "Nike Dunk SB Low Purple Pigeon",
+      "color": "Purple & Grey",
+      "image": "",
+      "price": 1600.00,
+      "own": false
+    }
+  },
+  {
+    "model": "holyGrail_api.product",
+    "pk": 5,
+    "fields": {
+      "closet_id": 1,
+      "name": "Nike Air Max 95 OG Neon (2020)",
+      "color": "Neon & Grey",
+      "image": "",
+      "price": 300.00,
+      "own": false
+    }
+  },
+  {
+    "model": "holyGrail_api.product",
+    "pk": 6,
+    "fields": {
+      "closet_id": 1,
+      "name": "Nike Air Max 1 Anniversary Royal (2017 Restock Pair)",
+      "color": "White & Blue",
+      "image": "",
+      "price": 572.00,
+      "own": false
+    }
+  }
+]

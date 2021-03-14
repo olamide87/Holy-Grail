@@ -1,0 +1,26 @@
+[
+  {
+    "model": "holy_grail_api.closet",
+    "pk": 1,
+    "fields": {
+      "title": "Shoes",
+      "user_id": 1
+    }
+  },
+  {
+    "model": "holy_grail_api.closet",
+    "pk": 2,
+    "fields": {
+      "title": "Clothes",
+      "user_id": 1
+    }
+  },
+  {
+    "model": "holy_grail_api.closet",
+    "pk": 3,
+    "fields": {
+      "title": "Accessories",
+      "user_id": 2
+    }
+  }
+]
