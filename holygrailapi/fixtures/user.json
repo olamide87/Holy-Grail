@@ -1,0 +1,28 @@
+[
+  {
+      "model": "auth.user",
+      "pk": 1,
+      "fields": {
+          
+          "first_name": "Olamide",
+          "last_name": "Oladinni",
+          "username": "olajide1987@gmail.com",
+          "email": "rawbidness88",
+          "password": "me"
+    
+      }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        
+        "first_name": "Albert",
+        "last_name": "Burris",
+        "username": "kicksGod90",
+        "email": "grailzinc@gmail.com",
+        "password": "me"
+  
+    }
+}
+]

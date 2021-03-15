@@ -1,0 +1,74 @@
+[
+  {
+    "model": "holygrailapi.product",
+    "pk": 1,
+    "fields": {
+      "closet_id": 1,
+      "product_name": "Jordan 5 Retro SE Oregon",
+      "color": "Green",
+      "image": "/images/air-jordan-5-retro-se-oregon-ck6631-307-pair.jpg",
+      "price": 264.00,
+      "owns": true
+    }
+  },
+  {
+    "model": "holygrailapi.product",
+    "pk": 2,
+    "fields": {
+      "closet_id": 1,
+      "product_name": "adidas Yeezy Boost 350 V2 Semi Frozen Yellow",
+      "color": "Neon Green",
+      "image": "/images/yeezy.jpg",
+      "price": 552.00,
+      "owns": true
+    }
+  },
+  {
+    "model": "holygrailapi.product",
+    "pk": 3,
+    "fields": {
+      "closet_id": 1,
+      "product_name": "ASICS Gel Kayano Trainer Birch",
+      "color": "Birch",
+      "image": "/images?ASIC-MZ123_V1.jpg",
+      "price": 44.00,
+      "owns": true
+    }
+  },
+  {
+    "model": "holygrailapi.product",
+    "pk": 4,
+    "fields": {
+      "closet_id": 1,
+      "product_name": "Nike Dunk SB Low Purple Pigeon",
+      "color": "Purple & Grey",
+      "image": "/images/Nike-Dunk-Low-SB-Purple-Pigeon-WDYWT-On-Feet.jpg",
+      "price": 1600.00,
+      "owns": false
+    }
+  },
+  {
+    "model": "holygrailapi.product",
+    "pk": 5,
+    "fields": {
+      "closet_id": 1,
+      "product_name": "Nike Air Max 95 OG Neon (2020)",
+      "color": "Neon & Grey",
+      "image": "/images/airmax.jpg",
+      "price": 300.00,
+      "owns": false
+    }
+  },
+  {
+    "model": "holygrailapi.product",
+    "pk": 6,
+    "fields": {
+      "closet_id": 1,
+      "product_name": "Nike Air Max 1 Anniversary Royal (2017 Restock Pair)",
+      "color": "White & Blue",
+      "image": "C:/images/airmax1.jpg",
+      "price": 572.00,
+      "owns": false
+    }
+  }
+]

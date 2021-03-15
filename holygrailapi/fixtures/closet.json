@@ -1,0 +1,26 @@
+[
+  {
+    "model": "holygrailapi.closet",
+    "pk": 1,
+    "fields": {
+      "title": "Shoes",
+      "user_id": 1
+    }
+  },
+  {
+    "model": "holygrailapi.closet",
+    "pk": 2,
+    "fields": {
+      "title": "Clothes",
+      "user_id": 1
+    }
+  },
+  {
+    "model": "holygrailapi.closet",
+    "pk": 3,
+    "fields": {
+      "title": "Accessories",
+      "user_id": 2
+    }
+  }
+]
