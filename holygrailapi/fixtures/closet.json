@@ -1,6 +1,6 @@
 [
   {
-    "model": "holy_grail_api.closet",
+    "model": "holygrailapi.closet",
     "pk": 1,
     "fields": {
       "title": "Shoes",
@@ -8,7 +8,7 @@
     }
   },
   {
-    "model": "holy_grail_api.closet",
+    "model": "holygrailapi.closet",
     "pk": 2,
     "fields": {
       "title": "Clothes",
@@ -16,7 +16,7 @@
     }
   },
   {
-    "model": "holy_grail_api.closet",
+    "model": "holygrailapi.closet",
     "pk": 3,
     "fields": {
       "title": "Accessories",

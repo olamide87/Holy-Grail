@@ -4,8 +4,8 @@
     {
       "previewLimit": 50,
       "driver": "SQLite",
-      "name": "holygrail",
-      "database": "holygrail"
+      "name": "holygrailapi",
+      "database": "db.sqlite3"
     }
   ]
 }

@@ -1,10 +1,11 @@
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.deletion import CASCADE
 from .closet import Closet
 
 class Product(models.Model):
-     closet_id = models.OneToOneField(Closet, on_delete=models.DO_NOTHING)
+     closet_id = models.ForeignKey(Closet, on_delete=CASCADE)
      product_name = models.CharField(max_length=50)
      color = models.CharField(max_length=50)
      image = models.ImageField(upload_to='items', height_field=None, width_field=None, max_length=None, null=True)

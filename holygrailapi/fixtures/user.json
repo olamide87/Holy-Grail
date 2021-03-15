@@ -6,11 +6,9 @@
           
           "first_name": "Olamide",
           "last_name": "Oladinni",
-          "profile_img":"",
           "username": "olajide1987@gmail.com",
-          "email": "rawBidness88",
-          "password": "",
-          "date_joined": ""
+          "email": "rawbidness88",
+          "password": "me"
     
       }
   },
@@ -21,11 +19,9 @@
         
         "first_name": "Albert",
         "last_name": "Burris",
-        "profile_img":"",
         "username": "kicksGod90",
         "email": "grailzinc@gmail.com",
-        "password": "",
-        "date_joined": ""
+        "password": "me"
   
     }
 }
