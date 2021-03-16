@@ -1,0 +1,26 @@
+[
+  {
+    "model": "holygrailapi.closetProduct",
+    "pk": 1,
+    "fields": {
+      "closet_id": "1",
+      "product_id": 1
+    }
+  },
+  {
+    "model": "holygrailapi.closetProduct",
+    "pk": 2,
+    "fields": {
+      "closet_id": "1",
+      "product_id": 2
+    }
+  },
+  {
+    "model": "holygrailapi.closetProduct",
+    "pk": 3,
+    "fields": {
+      "closet_id": 1,
+      "product_id": 3
+    }
+  }
+]
