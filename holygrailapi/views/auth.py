@@ -54,17 +54,13 @@ def register_user(request):
         password=req_body['password'],
         first_name=req_body['first_name'],
         last_name=req_body['last_name'],
-        profile_img=req_body['profile_img']
     )
 
     # Now save the extra info in the holyGrailapi_user table
-    user = User.objects.create(
-        bio=req_body['bio'],
-        user=new_user
-    )
+  
 
     # Commit the user to the database by saving it
-    user.save()
+   
 
     # Use the REST Framework's token generator on the new user account
     token = Token.objects.create(user=new_user)
