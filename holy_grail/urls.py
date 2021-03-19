@@ -1,14 +1,14 @@
-from holygrailapi.views.product import ProductViewSet
 from django.conf.urls import include
 from django.urls import path
 from holygrailapi.views import register_user, login_user
-from holygrailapi.views import ProductViewSet,ClosetProductViewset, ClosetViewset
 from rest_framework import routers
+
+from holygrailapi.views import ProductViewSet,ClosetProductViewSet, ClosetViewSet
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'product', ProductViewSet, 'product')
-router.register(r'closetProduct', ClosetProductViewset, 'closetProduct')
-router.register(r'closet', ClosetViewset, 'closet')
+router.register(r'closetProduct', ClosetProductViewSet, 'closetProduct')
+router.register(r'closet', ClosetViewSet, 'closet')
 
 urlpatterns = [
     path('', include(router.urls)),
