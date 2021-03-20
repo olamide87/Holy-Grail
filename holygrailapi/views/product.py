@@ -1,5 +1,6 @@
 """View module for handling requests about products"""
 import base64
+from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.core.files.base import ContentFile
 from django.db import IntegrityError
@@ -10,11 +11,13 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
-from holygrailapi.models import Product, Closet
+from holygrailapi.models import Product, Closet, ClosetProduct
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.permissions import DjangoModelPermissions
 from rest_framework.exceptions import PermissionDenied
+
+
 
 class IsOwnerOrReadOnly(permissions.BasePermission):
     """
@@ -37,6 +40,52 @@ class ProductViewSet(ViewSet):
     permission_classes = [ IsOwnerOrReadOnly ]
     queryset = Product.objects.none()
 
+    def create(self, request):
+        """Handle POST operations
+
+        Returns:
+            Response -- JSON serialized game instance
+        """
+
+        # Uses the token passed in the `Authorization` header
+        # product = Product.objects.get(user=request.auth.user)
+
+        # Create a new Python instance of the Product class
+        # and set its properties from what was sent in the
+        # body of the request from the client.
+        product = Product()
+        product.product_name = request.data["product_name"]
+        product.color = request.data["color"]
+        product.image = request.data["image"]
+        product.price = request.data["price"]
+        product.owns = request.data["owns"]
+
+        closetProduct = ClosetProduct()
+
+
+        # Use the Django ORM to get the record from the database
+        # whose `id` is what the client passed as the
+        # `gameTypeId` in the body of the request.
+        closet = Closet.objects.get(pk=request.data["closet_id"])
+        closetProduct.closet_id = closet
+
+        # Try to save the new game to the database, then
+        # serialize the game instance as JSON, and send the
+        # JSON as a response to the client request
+        try:
+            product.save()
+            closetProduct.product_id = product
+            closetProduct.save()
+            serializer = ProductSerializer(product, context={'request': request})
+            return Response(serializer.data)
+
+        # If anything went wrong, catch the exception and
+        # send a response with a 400 status code to tell the
+        # client that something was wrong with its request data
+        except ValidationError as ex:
+            return Response({"reason": ex.message}, status=status.HTTP_400_BAD_REQUEST)
+
+    
     def retrieve(self, request, pk=None):
         """Handle GET requests for single product
         Returns:
@@ -71,8 +120,11 @@ class ProductViewSet(ViewSet):
 
         serializer = ProductSerializer(
             product, many=True, context={'request': request})
-        return Response(serializer.data)    
+        return Response(serializer.data)
 
+            
+
+            
 
 
 
