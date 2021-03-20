@@ -85,6 +85,25 @@ class ProductViewSet(ViewSet):
         except ValidationError as ex:
             return Response({"reason": ex.message}, status=status.HTTP_400_BAD_REQUEST)
 
+    def update(self, request, pk=None):
+        """Handle PUT requests for a product
+        Returns:
+            Response -- Empty body with 204 status code
+        """
+        product = Product.objects.get(pk=pk)
+
+        # product.product_name = request.data["product_name"]
+        # product.color = request.data["color"]
+        # product.image = request.data["image"]
+        # product.price = request.data["price"]
+        product.owns = request.data["owns"]
+
+
+    
+        product.save()
+
+        return Response({}, status=status.HTTP_204_NO_CONTENT)
+
     
     def retrieve(self, request, pk=None):
         """Handle GET requests for single product
