@@ -92,10 +92,10 @@ class ProductViewSet(ViewSet):
         """
         product = Product.objects.get(pk=pk)
 
-        product.product_name = request.data["product_name"]
-        product.color = request.data["color"]
-        product.image = request.data["image"]
-        product.price = request.data["price"]
+        # product.product_name = request.data["product_name"]
+        # product.color = request.data["color"]
+        # product.image = request.data["image"]
+        # product.price = request.data["price"]
         product.owns = request.data["owns"]
 
 
