@@ -20,7 +20,7 @@ class ClosetProductViewSet(ViewSet):
             Response -- JSON serialized closetProduct
         """
         try:
-            ClosetProduct = ClosetProduct.objects.get(pk=pk)
+            closetProduct = ClosetProduct.objects.get(pk=pk)
             serializer = ClosetProductSerializer(closetProduct, context={'request': request})
             return Response(serializer.data)
         except Exception as ex:
@@ -45,7 +45,7 @@ class ProductSerializer(serializers.HyperlinkedModelSerializer):
     """JSON serializer for product"""
     class Meta:
         model = Product
-        fields = ('closet_id', 'product_name','color','image','price','owns')       
+        fields = ('product_name','color','image','price','owns')       
 
 
 class ClosetProductSerializer(serializers.ModelSerializer):
@@ -54,7 +54,7 @@ class ClosetProductSerializer(serializers.ModelSerializer):
     Arguments:
         serializers
     """
-    product = ProductSerializer(many=False)
+    product_id = ProductSerializer(many=False)
 
     class Meta:
         model = ClosetProduct

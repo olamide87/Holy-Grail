@@ -25,7 +25,7 @@ class ClosetViewSet(ViewSet):
         Returns:
             Response -- JSON serialized list of closets
         """
-        closet = closet.objects.all()
+        closet = Closet.objects.all()
 
         # Note the addtional `many=True` argument to the
         # serializer. It's needed when you are serializing
@@ -36,8 +36,8 @@ class ClosetViewSet(ViewSet):
 
 
 
-class ClosetSerializer(serializers.HyperlinkedModelSerializer):
-    """JSON serializer for game types
+class ClosetSerializer(serializers.ModelSerializer):
+    """JSON serializer for closet
     Arguments:
         serializers
     """

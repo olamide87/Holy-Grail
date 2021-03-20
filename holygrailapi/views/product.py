@@ -37,7 +37,7 @@ class ProductViewSet(ViewSet):
     permission_classes = [ IsOwnerOrReadOnly ]
     queryset = Product.objects.none()
 
-def retrieve(self, request, pk=None):
+    def retrieve(self, request, pk=None):
         """Handle GET requests for single product
         Returns:
             Response -- JSON serialized product instance
@@ -56,7 +56,7 @@ def retrieve(self, request, pk=None):
         except Exception as ex:
             return HttpResponseServerError(ex)    
 
-def list(self, request):
+    def list(self, request):
         """Handle GET requests to products resource
         Returns:
             Response -- JSON serialized list of products
@@ -67,10 +67,7 @@ def list(self, request):
         # Support filtering product by closet_id
         #    http://localhost:8000/games?type=1
         #
-        # That URL will retrieve all tabletop games
-        closet_id = self.request.query_params.get('closet_id', None)
-        if closet_id is not None:
-            product = product.filter(closet__id=closet_id)
+        
 
         serializer = ProductSerializer(
             product, many=True, context={'request': request})
@@ -83,11 +80,7 @@ class ProductSerializer(serializers.ModelSerializer):
     """JSON serializer for products"""
     class Meta:
         model = Product
-        url = serializers.HyperlinkedIdentityField(
-            view_name='product',
-            lookup_field='closet_id'
-        )
-        fields = ('closet_id', 'product_name', 'price', 'color', 'image_path',
+        fields = ('product_name', 'price', 'color', 'image',
                   'owns', 'image')
         depth = 1
 
