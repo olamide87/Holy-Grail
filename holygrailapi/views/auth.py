@@ -22,8 +22,7 @@ def login_user(request):
         # Use the built-in authenticate method to verify
         username = req_body['username']
         password = req_body['password']
-        authenticated_user = authenticate(username=username, password=password)
-
+        authenticated_user = authenticate(request,username=username, password=password)
         # If authentication was successful, respond with their token
         if authenticated_user is not None:
             token = Token.objects.get(user=authenticated_user)
