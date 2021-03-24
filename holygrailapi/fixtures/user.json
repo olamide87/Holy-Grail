@@ -8,8 +8,7 @@
           "last_name": "Oladinni",
           "username": "olajide1987@gmail.com",
           "email": "rawbidness88",
-          "password": "me"
-    
+          "password": "pbkdf2_sha256$216000$qMRH8szID7Z8$Vljya2V3XfruOHuvx1hGz9ZyKg4bxbw7rc2WO0gTR7I="
       }
   },
   {
@@ -21,7 +20,7 @@
         "last_name": "Burris",
         "username": "kicksGod90",
         "email": "grailzinc@gmail.com",
-        "password": "me"
+        "password": "pbkdf2_sha356$216000$qMRH8szID7Z8$Vljya2V3XfruOHuvx1hGz9ZyKg4bxbw7rc2WO0gTR7I="
   
     }
 }
