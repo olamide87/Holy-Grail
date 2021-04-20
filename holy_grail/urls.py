@@ -10,7 +10,7 @@ from holygrailapi.views import ProductViewSet,ClosetProductViewSet, ClosetViewSe
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'product', ProductViewSet, 'product')
 router.register(r'closetProduct', ClosetProductViewSet, 'closetProduct')
-router.register(r'closet', ClosetViewSet, 'closet')
+router.register(r'^closet/(?P<pk>\d+)$', ClosetViewSet, 'closet')
 
 urlpatterns = [
     path('', include(router.urls)),

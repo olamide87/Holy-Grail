@@ -20,12 +20,12 @@ from holygrailapi.models import Closet
 class ClosetViewSet(ViewSet):
     """Holygrail Closets"""
 
-    def list(self, request):
+    def list(self, request,pk=None):
         """Handle GET requests to get all closets
         Returns:
             Response -- JSON serialized list of closets
         """
-        closet = Closet.objects.all()
+        closet = Closet.objects.filter(user = request.auth.user)
 
         # Note the addtional `many=True` argument to the
         # serializer. It's needed when you are serializing
@@ -43,5 +43,5 @@ class ClosetSerializer(serializers.ModelSerializer):
     """
     class Meta:
         model = Closet
-        fields = ('title', 'user')
+        fields = ('title', 'user', "id")
 
