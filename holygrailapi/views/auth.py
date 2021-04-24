@@ -4,6 +4,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.models import User
 from rest_framework.authtoken.models import Token
 from django.views.decorators.csrf import csrf_exempt
+from holygrailapi.models import Closet
 
 
 @csrf_exempt
@@ -54,6 +55,27 @@ def register_user(request):
         first_name=req_body['first_name'],
         last_name=req_body['last_name'],
     )
+
+    Closet.objects.create(
+      title='clothes',
+      user= new_user
+    )
+
+    
+    Closet.objects.create(
+      title='accessories',
+      user= new_user
+    )
+
+    
+    Closet.objects.create(
+      title='shoes',
+      user= new_user
+    )
+
+
+
+    
 
     # Now save the extra info in the holyGrailapi_user table
   

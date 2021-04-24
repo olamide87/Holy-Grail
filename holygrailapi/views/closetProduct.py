@@ -60,4 +60,4 @@ class ClosetProductSerializer(serializers.ModelSerializer):
         model = ClosetProduct
         fields = ('product_id', 'closet_id', 'id')
         depth = 1
-
+ 

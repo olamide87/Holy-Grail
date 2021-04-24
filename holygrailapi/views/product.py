@@ -149,6 +149,11 @@ class ProductViewSet(ViewSet):
         # Get all product records from the database
         product = Product.objects.all()
 
+
+        closetId = self.request.query_params.get('type', None)
+        if closetId is not None:
+            product = product.filter(closetproduct__closet_id=closetId)
+
         # Support filtering product by closet_id
         #    http://localhost:8000/games?type=1
         #
@@ -169,6 +174,6 @@ class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
         fields = ('product_name', 'price', 'color', 'image',
-                  'owns', 'image')
+                  'owns', 'image', 'id')
         depth = 1
 
